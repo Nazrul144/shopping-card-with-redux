@@ -1,3 +1,4 @@
+import { addToCart } from "@/redux/features/cartSlice";
 import { use, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
@@ -10,10 +11,7 @@ const AddProduct = () => {
     const dispatch = useDispatch();
 
     const onSubmit = ()=>{
-        console.log(data);
-        // Here you can dispatch an action to add the product to the cart
-        // For example: dispatch(addProduct(data));
-        dispatch(AddProduct(data))
+        dispatch(addToCart(data));
     }
 
     return (
