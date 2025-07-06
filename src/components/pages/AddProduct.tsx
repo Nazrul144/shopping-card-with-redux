@@ -10,7 +10,7 @@ const AddProduct = () => {
         category: string;
         image: string;
         price: number;
-        date: string; // Assuming the date is a string in the format YYYY-MM-DD
+        date: string; 
     }
 
     const { register, handleSubmit } = useForm <ProductData>();
