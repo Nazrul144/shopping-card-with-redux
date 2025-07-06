@@ -8,7 +8,7 @@ const Home = () => {
 
 
   return (
-    <div className='py-8'>
+    <div className='py-8 px-32'>
       <div className='grid lg:grid-cols-3 grid-cols-1 gap-8'>
         <div className='col-span-2'>
           <div className='grid lg:grid-cols-2 gap-4 gap-y-8'>

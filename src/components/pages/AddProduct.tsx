@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const [data, setData] = useState("");
+
+    const dispatch = useDispatch();
+
+    const onSubmit = ()=>{
+        console.log(data);
+        // Here you can dispatch an action to add the product to the cart
+        // For example: dispatch(addProduct(data));
+        dispatch(AddProduct(data))
+    }
 
     return (
         <div>
@@ -15,7 +25,7 @@ const AddProduct = () => {
                         Add New Product!
                     </h2>
 
-                    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))} className="space-y-4">
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                         {/* name */}
                         <div>
                             <label className="text-sm font-medium block text-gray-600">
