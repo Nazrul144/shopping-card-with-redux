@@ -1,9 +1,15 @@
 import { useSelector } from "react-redux"
 import ProductCard from "./ProductCard"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import Header from "./Header";
 
 const Home = () => {
   const products = useSelector((state: string) => state.cart)
-  console.log(products)
+  const { register, handleSubmit } = useForm();
+  const [data, setData] = useState("");
+
+
   return (
     <div>
       <h1 className="text-red-400">Welcome to the Shopping Cart</h1>
@@ -20,7 +26,7 @@ const Home = () => {
               Add New Product!
             </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={handleSubmit((data)=> setData(JSON.stringify(data)))} className="space-y-4">
               {/* name */}
               <div>
                 <label className="text-sm font-medium block text-gray-600">
