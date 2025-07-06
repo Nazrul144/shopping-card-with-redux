@@ -7,10 +7,10 @@ import {
   RouterProvider,
 } from "react-router";
 import Root from './layout/Root.tsx';
-import Products from './components/pages/Products.tsx';
-import Home from './components/pages/Home.tsx';
+
 import { Provider } from 'react-redux';
 import store from './redux/store.ts';
+import Home from './pages/home/Home.tsx';
 
 
 const router = createBrowserRouter([
@@ -22,10 +22,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home/>
       },
-      {
-        path: "/products",
-        element: <Products/>
-      }
+     
     ]
   },
 ]);
