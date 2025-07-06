@@ -1,16 +1,24 @@
 import { addToCart } from "@/redux/features/cartSlice";
-import { use, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { useDispatch } from "react-redux";
 
 
 const AddProduct = () => {
-    const { register, handleSubmit } = useForm();
-    const [data, setData] = useState("");
+
+    interface ProductData {
+        name: string;
+        category: string;
+        image: string;
+        price: number;
+        date: string; // Assuming the date is a string in the format YYYY-MM-DD
+    }
+
+    const { register, handleSubmit } = useForm <ProductData>();
+
 
     const dispatch = useDispatch();
 
-    const onSubmit = ()=>{
+    const onSubmit: SubmitHandler<ProductData> = (data) => {
         dispatch(addToCart(data));
     }
 
