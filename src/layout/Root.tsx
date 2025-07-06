@@ -1,14 +1,12 @@
+import Navbar from "@/components/shared/Navbar"
+import { Outlet } from "react-router"
 
 
 const Root = () => {
   return (
     <div>
-        <h1 className="text-3xl font-bold underline">
-            Hello world!
-        </h1>
-        <p className="text-lg text-gray-700">
-            Welcome to your shopping cart application.
-        </p>
+        <Navbar/>
+       <Outlet/>
     </div>
   )
 }
