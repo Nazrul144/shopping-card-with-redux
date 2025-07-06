@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router";
 import Root from './layout/Root.tsx';
+import Products from './components/pages/Products.tsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/products",
-        element: <div>Products</div>
+        element: <Products/>
       }
     ]
   },
